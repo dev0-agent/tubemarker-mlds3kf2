@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "commitMessage": "feat: set up project foundation and main layout
+
+- Configure react-router-dom with Dashboard and VideoPlayer routes
+- Implement MainLayout with responsive Sidebar
+- Clean up default template artifacts
+- Set up basic page components",
+  "prTitle": "Project Foundation & Layout",
+  "prBody": "This PR sets up the basic application shell and routing for TubeMarker.
+
+Key changes:
+- Added `react-router-dom` configuration in `main.tsx` and `App.tsx`.
+- Created `MainLayout` component using shadcn sidebar components.
+- Created placeholder `Dashboard` and `VideoPlayer` pages.
+- Removed template example components.
+- Verified type safety with `tsc`.",
+  "notes": "The project is now ready for feature implementation. Routing is functional and the layout provides a solid foundation for the upcoming tasks."
+}
