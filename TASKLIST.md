@@ -15,7 +15,7 @@ It is automatically updated by dev0 as tasks are completed.
 
 ## Phase 2
 
-- [ ] ⏳ **Add Video Feature**
+- [x] ✅ **Add Video Feature**
   Create a Dialog/Modal component to add a new video. Implement logic to parse YouTube URLs (standard, short, and timestamps). Validate the URL using the Zod schema from Task 2. On success, save the video metadata to LocalStorage and redirect to the player view.
 
 - [ ] ⏳ **YouTube Player Integration**
