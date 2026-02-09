@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "commitMessage": "feat: implement data persistence layer with LocalStorage, Zod schemas, and useStorage hook",
+  "prTitle": "Data Persistence Layer Implementation",
+  "prBody": "Implemented the data persistence layer using LocalStorage and Zod for validation.
+
+Changes:
+- Added `zod` dependency.
+- Created `src/lib/schemas.ts` for Zod schemas and TypeScript interfaces (Video, Note, Tag).
+- Created `src/lib/storage.ts` for raw storage operations with validation.
+- Created `src/hooks/use-storage.tsx` providing `StorageContext`, `StorageProvider`, and `useStorage` hook with full CRUD capabilities.
+- Updated `src/main.tsx` to wrap the application with `StorageProvider`.
+- Added unit tests in `tests/storage.test.ts` to verify storage logic.",
+  "notes": "The storage layer is fully functional and integrated. The `useStorage` hook provides methods for managing videos, notes, and tags. Data is persisted to `localStorage` under the key `tubemarker-data`."
+}
