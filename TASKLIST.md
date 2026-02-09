@@ -7,7 +7,7 @@ It is automatically updated by dev0 as tasks are completed.
 
 ## Phase 1
 
-- [ ] ⏳ **Project Foundation & Layout**
+- [x] ✅ **Project Foundation & Layout**
   Set up the basic routing and application shell. Create a MainLayout component with a sidebar/navigation and a content area. Configure 'react-router-dom' with routes for the Dashboard (home) and the Video Player view. Clean up default template artifacts.
 
 - [ ] ⏳ **Data Persistence Layer**
