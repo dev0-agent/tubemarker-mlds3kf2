@@ -1,0 +1,14 @@
+{"status":"success","commitMessage":"feat: implement add video feature with YouTube URL parsing and validation
+
+- Created YouTube URL parser with timestamp support
+- Implemented AddVideoDialog component using shadcn/ui
+- Integrated AddVideoDialog into Dashboard
+- Added Toaster for notifications
+- Updated useStorage hook to use the new parser","prTitle":"Add Video Feature","prBody":"This PR implements the Add Video feature as described in Phase 2. 
+
+Key changes:
+- Added a robust YouTube URL parser in `src/lib/youtube.ts` that handles standard, short, and embed URLs, as well as timestamps.
+- Created `AddVideoDialog` component which allows users to add videos by URL with optional title. It validates the URL using Zod and redirects to the player upon success.
+- Integrated the `AddVideoDialog` into the `Dashboard` page.
+- Added `Toaster` from `sonner` to `App.tsx` for user feedback.
+- Improved `useStorage` hook to utilize the new URL parser.","notes":"The YouTube URL parser handles various formats including `youtu.be`, `youtube.com/watch`, and embed URLs, extracting both video ID and start time. The UI uses shadcn components and provides immediate feedback via toasts."}

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AppData, Note, Tag, Video, VideoSchema, NoteSchema, TagSchema } from '../lib/schemas';
 import { loadData, saveData } from '../lib/storage';
+import { parseYouTubeUrl } from '../lib/youtube';
 
 interface StorageContextType {
   data: AppData;
@@ -19,13 +20,6 @@ interface StorageContextType {
 
 const StorageContext = createContext<StorageContextType | undefined>(undefined);
 
-// Helper to extract YouTube ID
-const extractVideoId = (url: string): string | null => {
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[2].length === 11) ? match[2] : null;
-};
-
 export function StorageProvider({ children }: { children: React.ReactNode }) {
   const [data, setData] = useState<AppData>({ videos: [], tags: [] });
   const [isLoading, setIsLoading] = useState(true);
@@ -42,7 +36,8 @@ export function StorageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const addVideo = (videoData: Omit<Video, 'id' | 'createdAt' | 'updatedAt' | 'notes' | 'tags'> & { id?: string }) => {
-    const id = videoData.id || extractVideoId(videoData.url);
+    const info = parseYouTubeUrl(videoData.url);
+    const id = videoData.id || info?.videoId;
     if (!id) {
       console.error('Invalid YouTube URL or ID missing');
       return;
